@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+  <suite name="Validate the user is able to decline BirthdayGift and validate the changes">
+  		 <parameter name="suiteName" value="Validate the user is able to decline BirthdayGift and validate the changes"/>            
+         <parameter name="browser" value="Chrome"/>           
+         <parameter name="channel" value="Desktop"/> 
+         <parameter name="configId" value="CONFIG_CH"/> 
+         <parameter name="iterations" value="1"/>  
+         <parameter name="configpath" value="./config/PreHybris"/>  
+              
+      		 <test name="SCENARIOS_171">	        	
+             <classes>
+                     <class name="com.sapient.qa.cats.core.framework.TestConfig"/>     
+                     <class name="com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_171"/>
+             </classes> 
+              </test>       
+       
+   </suite>

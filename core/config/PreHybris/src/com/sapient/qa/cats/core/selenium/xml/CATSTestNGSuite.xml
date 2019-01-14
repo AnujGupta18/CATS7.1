@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CATS_Run">
+	<listeners>
+		<listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener" />
+	</listeners> 
+     <suite-files>
+          	<suite-file path="Validate the user is able to decline BirthdayGift and validate the changes.xml" />
+    </suite-files>
+</suite> 
