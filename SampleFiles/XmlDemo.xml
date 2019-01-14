@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menu>
+     <category name="veg">
+             <food type="breakfast" cusine="western">
+                      <name>Belgian Waffles</name>
+                      <price>$5.95</price>
+                      <description><![CDATA[Two of our famous Belgian Waffles with plenty of real maple syrup]]></description>
+                      <calories>650</calories>
+             </food>
+             <food type="breakfast" cusine="western">
+                      <name>Strawberry Belgian Waffles</name>
+                      <price>$7.95</price>
+                      <description><![CDATA[Light Belgian waffles covered with strawberries and whipped cream]]></description>
+                      <calories>900</calories>
+             </food>
+             <food type="breakfast" cusine="asian">
+                      <name>Dosa</name>
+                      <price>$8.95</price>
+                      <description><![CDATA[Type of savoury rice cake, popular as breakfast foods throughout India ]]></description>
+                      <calories>200</calories>
+             </food>
+     </category>
+     <category name="non-veg">
+             <food type="lunch" cusine="asian">
+                      <name>Briyani</name>
+                      <price>$15.95</price>
+                      <description><![CDATA[Biryani is a one-dish rice-based meal that consists of layering cooked rice and meat in a casserole, before baking it in the oven]]></description>
+                      <calories>1200</calories>
+             </food>
+     </category>
+     <timings>
+            <breakfast startAt="7:00 am" endAt="11:30 am"/>
+            <lunch startAt="12:30 pm" endAt="3:30 pm"/>
+            <dinner startAt="6:30 pm" endAt="10:30 pm"/>
+     </timings>
+</Menu>

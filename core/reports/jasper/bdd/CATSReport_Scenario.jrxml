@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSReport_Scenario" pageWidth="1109" pageHeight="1684" columnWidth="1109" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="2d4f0546-3019-485a-bf65-bb43371059aa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<field name="scenarioId" class="java.lang.String"/>
+	<field name="testcaseRows" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="195" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="24" width="1109" height="126" uuid="1325cc10-a41c-4df9-9271-71489fe522d9"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+		            ($F{testcaseRows})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CATSReport_Testcases.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement style="style1" x="0" y="0" width="64" height="20" uuid="22b48e95-4857-4f65-8820-0e559d280826"/>
+				<text><![CDATA[Scenario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="64" y="0" width="1045" height="20" uuid="6b2076ba-51e5-4fb5-8935-ad71b7ee7735"/>
+				<textFieldExpression><![CDATA[$F{scenarioId}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA[$F{scenarioId}]]></anchorNameExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

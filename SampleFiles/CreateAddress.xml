@@ -1,0 +1,19 @@
+<address>
+    <owner pk="{{ownerPK}}">
+        <sealed>false</sealed>
+    </owner>
+    <sealed>false</sealed>
+    <billingAddress>{{isBillingAddress}}</billingAddress>
+    <contactAddress>{{isContactAddress}}</contactAddress>
+	<shippingAddress>{{isShippingAddress}}</shippingAddress>
+    <country isocode="{{countryCode}}">
+        <sealed>false</sealed>
+    </country>
+    <line1>{{streetName}}</line1>
+    <paymentAddresss2CartToOrderCronJob/>
+    <phone1>{{phoneNumber}}</phone1>
+    <postalcode>{{PostalCode}}</postalcode>    
+    <streetname>{{streetName}}</streetname>
+    <town>{{city}}</town>
+    <visibleInAddressBook>true</visibleInAddressBook>
+</address>

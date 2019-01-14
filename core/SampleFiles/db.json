@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingthesmartway.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      "first_name": "Robert",
+      "last_name": "Smith",
+      "email": "rsmith@publicisgroupe.net",
+      "id": 3
+    },
+    {
+      "first_name": "Mark",
+      "last_name": "Simpson",
+      "email": "mark@publicisgroupe.net",
+      "id": 4
+    }
+  ]
+}

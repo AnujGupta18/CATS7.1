@@ -1,0 +1,22 @@
+{  
+   "$schema":"http://json-schema.org/draft-04/schema#",
+   "title":"UserSignUpWsDTO",
+   "type":"object",
+   "properties":{  
+      "uid":{  
+         "type":"1234"
+      },
+      "firstName":{  
+         "type":"FN"
+      },
+      "lastName":{  
+         "type":"LN"
+      },
+      "titleCode":{  
+         "type":"Mr."
+      },
+      "password":{  
+         "type":"qwerty"
+      }
+   }
+}

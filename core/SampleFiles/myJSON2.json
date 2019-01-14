@@ -1,0 +1,25 @@
+{
+     "a": {
+          "b": "b-val",
+          "c": "c-val",
+          "d": {
+               "e": [
+                 {"name": "Apple", "category": "fruit"},
+                 {"name": "Orange", "category": "fruit"},
+                 {"name": "Tiger", "category": "animal"},
+                 {"name": "Carrot", "category": "vegetable"}
+                    ]
+               }
+          },
+     "js1": {"key1":"val1", "name":"CATS"},
+     "js2": {"price":50.00, "Qty":3},
+     "js3": {
+          "payment":["Amex", "Rupay", "Master", "Visa"],
+          "delivery":["Standard", "Express", "1 Day Delivery", "Night Delivery"]
+     },
+  "js4": {
+          "payment":["Cash", "Check", "Master", "Visa"],
+          "delivery":["Standard", "Express", "Airway"]
+     }
+   
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Place a Credit Card order_VISA]">
+  <parameter name="configId" value="CONFIG_Chrome"/>
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="channel" value="Desktop"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="Place a Credit Card order_VISA"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" name="SCENARIOS_1(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_1">
+        <methods>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="beginScenario"/>
+          <include name="CART_ClickCheckOutBttn7" invocation-numbers="0"/>
+          <include name="testAfterSuite"/>
+          <include name="endTestcase"/>
+          <include name="REVIEW_PlaceOrder10" invocation-numbers="0"/>
+          <include name="intializeTest"/>
+          <include name="PAYMENT_VISALoggedInUser9" invocation-numbers="0"/>
+          <include name="beginTestCase"/>
+          <include name="COMMON_CloseWindow12" invocation-numbers="0"/>
+          <include name="REVIEW_VerifyThankYouText11" invocation-numbers="0"/>
+          <include name="testBeforeSuite"/>
+          <include name="endScenario"/>
+          <include name="PDP_MiniCartIconClick6" invocation-numbers="0"/>
+          <include name="SHIPPING_ClickContinue8" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_1 -->
+    </classes>
+  </test> <!-- SCENARIOS_1(failed) -->
+</suite> <!-- Failed suite [Place a Credit Card order_VISA] -->

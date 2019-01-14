@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSReport_Scenario" pageWidth="1109" pageHeight="1684" columnWidth="1109" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="2d4f0546-3019-485a-bf65-bb43371059aa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+	<style name="tableData" mode="Opaque" backcolor="#FFFFFF" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<style name="tableHeader" mode="Opaque" backcolor="#DCDCDC" hAlign="Center" vAlign="Middle" isBlankWhenNull="false" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="suiteStartTime" class="java.util.Date"/>
+	<field name="feature" class="java.lang.String"/>
+    <field name="channel" class="java.lang.String"/>
+    <field name="browser" class="java.lang.String"/>
+	<field name="scenarioSummaryRows" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100">
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="64" width="57" height="20" uuid="ad60d964-9469-4b46-9e30-1645ca0277a8"/>
+				<text><![CDATA[End  Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="42" width="57" height="22" uuid="e4d7a9ae-9e1c-4512-b8e0-00c476441641"/>
+				<text><![CDATA[Start Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="0" width="57" height="22" uuid="6b910cf8-43bd-4169-a128-f92f8819e568"/>
+				<text><![CDATA[Browser]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement style="tableData" x="57" y="64" width="181" height="20" uuid="d51d4926-41a8-4879-b88f-86d82c83bdc0"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="22" width="57" height="20" uuid="fc172780-b171-4c15-9f10-74ea52f1486d"/>
+				<text><![CDATA[Channel]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" x="57" y="0" width="181" height="22" uuid="2da80f26-1650-475b-8c9f-e76ad1d749de"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{browser}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement style="tableData" x="57" y="42" width="181" height="22" uuid="3673670c-6764-4e12-bc95-2b3440670b99"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{suiteStartTime}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" x="57" y="22" width="181" height="20" uuid="c8c33b9f-17ec-4ba7-9bde-cfeef35f42fe"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{channel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="195" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="24" width="1109" height="126" uuid="1325cc10-a41c-4df9-9271-71489fe522d9"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+		            ($F{scenarioSummaryRows})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CATSReport_Testcases_BDD_Scenario.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement style="style1" x="0" y="0" width="57" height="20" backcolor="#DCDCDC" uuid="22b48e95-4857-4f65-8820-0e559d280826"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Feature:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="64" y="0" width="1045" height="20" uuid="6b2076ba-51e5-4fb5-8935-ad71b7ee7735"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feature}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA[$F{feature}]]></anchorNameExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

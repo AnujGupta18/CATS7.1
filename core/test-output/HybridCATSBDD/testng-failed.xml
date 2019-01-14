@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="-1" name="Failed suite [HybridCATSBDD]">
+  <parameter name="configId" value="CONFIG_Chrome"/>
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="channel" value="Desktop"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="HybridCATSBDD"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" verbose="-1" name="HybridCATSBDD(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.bdd.runner.HybridCATSBDD">
+        <methods>
+          <include name="executeScenario" invocation-numbers="0"/>
+          <include name="beginTestCase"/>
+          <include name="setUpClass"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="beginScenario"/>
+          <include name="tearDownClass"/>
+          <include name="testBeforeSuite"/>
+          <include name="testAfterSuite"/>
+          <include name="endTestcase"/>
+          <include name="intializeTest"/>
+          <include name="endScenario"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.bdd.runner.HybridCATSBDD -->
+    </classes>
+  </test> <!-- HybridCATSBDD(failed) -->
+</suite> <!-- Failed suite [HybridCATSBDD] -->

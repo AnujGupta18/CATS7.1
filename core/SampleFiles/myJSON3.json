@@ -1,0 +1,17 @@
+{
+"a"	: [
+		 {"format": "jpeg", "category": "pictures"},
+		 {"format": "gif", "category": "graphic"},
+		 {"format": "mp4", "category": "video"},
+		 {"format": "doc", "category": "document"}
+	],
+	
+	"b":[ { "aa":"bb"},
+	       { "aa":"cc"	}
+			],
+			
+			"a" : [
+			{"format": "xlsx", "category": "pictures"},
+		    {"format": "txt", "category": "graphic"}
+			]
+	}

@@ -1,0 +1,19 @@
+<customer uid="{{userID}}" >
+    <sealed>false</sealed>
+    <accessibleCategories/>
+    <displayName>{{displayName}}</displayName>
+    <groups>
+        <principalGroup uid="customergroup" pk="8796093120517">
+            <sealed>false</sealed>
+        </principalGroup>
+    </groups>
+    <name>{{displayName}}</name>
+    
+    <sessionCurrency isocode="USD" pk="8796093120545">
+        <sealed>false</sealed>
+    </sessionCurrency>
+    <sessionLanguage isocode="en" pk="8796093055008">
+        <sealed>false</sealed>
+    </sessionLanguage>
+    <contactEmail>{{emailID}}</contactEmail>
+</customer>

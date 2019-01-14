@@ -1,0 +1,16 @@
+Copy SampleFIles folder in same level as core folder in CATS folder setup.
+
+REST Demo : framework site and commonds to launch the node framewor
+
+link :- https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d ==> no db required
+
+Install npm using : $ npm install -g json-server
+
+json-server --watch db.json
+
+EmpRestGetUrlList	http://localhost:3000/employees/
+EmpRestPostUrl	http://localhost:3000/employees/
+EmpRestGetUrlIndvidual	http://localhost:3000/employees/1
+EmpRestGetUrlQryParam	http://localhost:3000/employees/
+EmpRestPutUrl	http://localhost:3000/employees/3
+EmpRestDeleteUrl	http://localhost:3000/employees/{{var1}}

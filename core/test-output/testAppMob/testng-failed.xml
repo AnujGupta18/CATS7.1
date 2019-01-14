@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testAppMob]">
+  <parameter name="configId" value="CONFIG_AndroidApp"/>
+  <parameter name="browser" value="App"/>
+  <parameter name="channel" value="Mobile"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="testAppMob"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test name="SCENARIOS_AppLaunch(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_AppLaunch">
+        <methods>
+          <include name="beginTestCase"/>
+          <include name="DemoApp111" invocation-numbers="0"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="beginScenario"/>
+          <include name="endScenario"/>
+          <include name="testBeforeSuite"/>
+          <include name="testAfterSuite"/>
+          <include name="endTestcase"/>
+          <include name="intializeTest"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_AppLaunch -->
+    </classes>
+  </test> <!-- SCENARIOS_AppLaunch(failed) -->
+</suite> <!-- Failed suite [testAppMob] -->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [AGTB]">
+  <parameter name="configId" value="CONFIG_Service"/>
+  <parameter name="browser" value=""/>
+  <parameter name="channel" value="Services"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="AGTB"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" name="AGTB(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.bdd.runner.AGTB">
+        <methods>
+          <include name="executeScenario" invocation-numbers="0"/>
+          <include name="beginTestCase"/>
+          <include name="endScenario"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="tearDownClass"/>
+          <include name="testBeforeSuite"/>
+          <include name="testAfterSuite"/>
+          <include name="beginScenario"/>
+          <include name="endTestcase"/>
+          <include name="setUpClass"/>
+          <include name="intializeTest"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.bdd.runner.AGTB -->
+    </classes>
+  </test> <!-- AGTB(failed) -->
+</suite> <!-- Failed suite [AGTB] -->

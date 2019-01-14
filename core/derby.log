@@ -1,0 +1,14 @@
+Mon Jan 14 13:09:27 IST 2019 : Apache Derby Network Server - 10.11.1.1 - (1616546) started and ready to accept connections on port 1528
+----------------------------------------------------------------
+Mon Jan 14 13:09:27 IST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0168-4b4d-0c2d-00000d3a1c30 
+on database directory C:\git\CATS7.1\core\config\default\reportdbg with class loader sun.misc.Launcher$AppClassLoader@763d9750 
+Loaded from file:/C:/git/CATS7.1/core/lib/derby-10.11.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_191-b12
+user.dir=C:\git\CATS7.1\core
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

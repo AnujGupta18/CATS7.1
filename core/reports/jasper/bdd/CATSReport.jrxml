@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSReport" pageWidth="1300" pageHeight="1684" whenNoDataType="AllSectionsNoDetail" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" isIgnorePagination="true" uuid="724eb580-ae75-4e05-b92b-5b3713ba273b">
+	<property name="ireport.zoom" value="0.8264462809917354"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="ReportHeader" forecolor="#0066FF" hAlign="Center" vAlign="Middle" fontName="Cambria" fontSize="20" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="LOGO" hAlign="Center" vAlign="Middle" isBlankWhenNull="true" fontName="Cambria" fontSize="28" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="suiteStartTime" class="java.util.Date"/>
+	<field name="summary" class="java.util.List"/>
+	<field name="scenarioRows" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="252">
+			<staticText>
+				<reportElement style="ReportHeader" x="0" y="49" width="1260" height="57" uuid="09bfe086-3b5f-4194-bd88-6ed94c7b7e19"/>
+				<text><![CDATA[DETAILED BDD TEST EXECUTION REPORT]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="106" width="1260" height="146" uuid="4297c1f0-1f55-4eb1-a99a-86c1eef10cb3"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="suiteStartTime">
+					<subreportParameterExpression><![CDATA[$P{suiteStartTime}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+		            ($F{summary})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CATSReport_Scenario_BDD_Feature.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement style="LOGO" x="0" y="0" width="1260" height="49" uuid="efd67e03-a7fb-46f9-bf76-e7e0583f3e2a"/>
+				<text><![CDATA[CATS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="146" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="1260" height="146" uuid="1325cc10-a41c-4df9-9271-71489fe522d9"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+		            ($F{scenarioRows})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CATSReport_Scenario.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

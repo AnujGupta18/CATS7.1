@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="-1" name="Failed suite [SimpleCATSBDD]">
+  <parameter name="configId" value="CONFIG_Chrome"/>
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="channel" value="Desktop"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="SimpleCATSBDD"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" verbose="-1" name="SimpleCATSBDD(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="beginTestCase"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="executeScenario" invocation-numbers="1 2 3 4 5 6 7 8"/>
+          <include name="setUpClass"/>
+          <include name="beginScenario"/>
+          <include name="testBeforeSuite"/>
+          <include name="endScenario"/>
+          <include name="testAfterSuite"/>
+          <include name="endTestcase"/>
+          <include name="intializeTest"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD -->
+    </classes>
+  </test> <!-- SimpleCATSBDD(failed) -->
+</suite> <!-- Failed suite [SimpleCATSBDD] -->

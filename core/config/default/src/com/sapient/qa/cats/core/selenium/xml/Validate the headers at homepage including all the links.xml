@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+  <suite name="Validate the headers at homepage including all the links">
+    <parameter name="suiteName" value="Validate the headers at homepage including all the links"/>
+    <parameter name="browser" value="Edge"/>
+    <parameter name="channel" value="Desktop"/> 
+    <parameter name="configId" value="CONFIG_Edge"/> 
+    <parameter name="iterations" value="1"/>
+    <parameter name="configpath" value="config/default"/>
+
+        <test name="SCENARIOS_31">
+          <classes>
+            <class name="com.sapient.qa.cats.core.framework.TestConfig"/>
+            <class name="com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_31"/>
+          </classes>
+        </test>
+
+  </suite>

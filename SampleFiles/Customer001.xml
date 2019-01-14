@@ -1,0 +1,21 @@
+<customer uid="user0001" >
+    <sealed>false</sealed>
+    <accessibleCategories/>
+    <displayName>Monique Kepp</displayName>
+    <groups>
+        <principalGroup uid="customergroup" pk="8796093120517">
+            <sealed>false</sealed>
+        </principalGroup>
+    </groups>
+    <name>Monique Kepp</name>
+    
+    <sessionCurrency isocode="USD" pk="8796093120545">
+        <sealed>false</sealed>
+    </sessionCurrency>
+    <sessionLanguage isocode="en" pk="8796093055008">
+        <sealed>false</sealed>
+    </sessionLanguage>
+    <contactEmail>user001@catstest.com</contactEmail>
+	<passwordEncoding>plain</passwordEncoding> 
+	<encodedPassword>user001</encodedPassword>
+</customer>

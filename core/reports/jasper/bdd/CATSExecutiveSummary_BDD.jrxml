@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSExecutiveSummary" pageWidth="1300" pageHeight="1190" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="1ae6d297-0a31-4a99-afee-9676de6a3a3d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="257"/>
+	<property name="ireport.y" value="0"/>
+	<style name="tableHeader" mode="Opaque" backcolor="#DCDCDC" hAlign="Center" vAlign="Middle" isBlankWhenNull="true" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="PageHeader" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="30" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="tableData" mode="Transparent" backcolor="#FFFFFF" fill="Solid" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<pen lineColor="#000000"/>
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+<style name="tableData1" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25" lineColor="#000000"/>
+			<topPen lineWidth="0.25" lineColor="#000000"/>
+			<leftPen lineWidth="0.25" lineColor="#000000"/>
+			<bottomPen lineWidth="0.25" lineColor="#000000"/>
+			<rightPen lineWidth="0.25" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Result" style="tableData1" forecolor="#FFFFFF">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{passedCount}!=0]]></conditionExpression>
+			<style forecolor="#139423"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{passedCount}==0]]></conditionExpression>
+			<style forecolor="#000000"/>
+		</conditionalStyle>
+	</style>
+	<style name="Result1" style="tableData1" forecolor="#FFFFFF">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{failedCount}!=0]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{failedCount}==0]]></conditionExpression>
+			<style forecolor="#000000"/>
+		</conditionalStyle>
+	</style>
+
+	<style name="ReportHeader" forecolor="#0066FF" hAlign="Center" vAlign="Middle" fontName="Cambria" fontSize="20" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="LOGO" hAlign="Center" vAlign="Middle" isBlankWhenNull="true" fontName="Cambria" fontSize="28" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="FailPercentage" style="tableData">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Float.parseFloat($F{failPercentage}.replaceAll("%","")) >= 30.0 && Float.parseFloat($F{failPercentage}.replaceAll("%","")) <= 70.0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FFC800"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Float.parseFloat($F{failPercentage}.replaceAll("%","")) > 70.0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FF0000"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Float.parseFloat($F{failPercentage}.replaceAll("%","")) < 30.0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#00FF00"/>
+		</conditionalStyle>
+	</style>
+	<style name="PassPercentage" style="tableData">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Float.parseFloat($F{passPercentage}.replaceAll("%","")) > $P{passPercentageThreshold}]]></conditionExpression>
+			<style mode="Opaque" backcolor="#00E673"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Float.parseFloat($F{passPercentage}.replaceAll("%","")) >= $P{failPercentageThreshold} && Float.parseFloat($F{passPercentage}.replaceAll("%","")) <= $P{passPercentageThreshold}]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FFC800"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Float.parseFloat($F{passPercentage}.replaceAll("%","")) < $P{failPercentageThreshold}]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FF8566"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="startTimes" class="java.util.Date"/>
+	<parameter name="failPercentageThreshold" class="java.lang.Float"/>
+	<parameter name="passPercentageThreshold" class="java.lang.Float"/>
+	<field name="testSuite" class="java.lang.String"/>
+	<field name="testSuiteReportLink" class="java.lang.String"/>
+	<field name="channel" class="java.lang.String"/>
+	<field name="browser" class="java.lang.String"/>
+	<field name="featureCount" class="java.lang.Long"/>
+	<field name="testcaseCount" class="java.lang.Long"/>
+	<field name="passedCount" class="java.lang.Integer"/>
+	<field name="failedCount" class="java.lang.Integer"/>
+	<field name="noRunCount" class="java.lang.Integer"/>
+	<field name="executionPercentage" class="java.lang.String"/>
+	<field name="passPercentage" class="java.lang.String"/>
+	<field name="failPercentage" class="java.lang.String"/>
+	<field name="duration" class="java.lang.String"/>
+	<field name="release" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement style="LOGO" x="0" y="0" width="1260" height="37" uuid="e759ab52-7f32-4c15-8de0-560cf0aae236"/>
+				<text><![CDATA[CATS]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="0" y="59" width="279" height="22" uuid="fb93343e-95db-4cb0-a9fc-226008d69b6c"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{startTimes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="ReportHeader" x="0" y="37" width="279" height="22" forecolor="#000000" uuid="68a97b61-cbf0-42da-974d-5acfc29ecfe5"/>
+				<textElement textAlignment="Left">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Execution Started At :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ReportHeader" x="14" y="36" width="1260" height="45" uuid="ee87c8b8-55a7-466d-a005-12ec6e5d5c1e"/>
+				<text><![CDATA[BDD EXECUTIVE DASHBOARD]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="0" width="327" height="35" uuid="07ec9708-a35b-4478-b1da-75982a03fb98"/>
+				<text><![CDATA[Test Suite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="427" y="0" width="111" height="35" uuid="5ac55bcd-3b34-4d69-b8b8-3236cfad3779"/>
+				<text><![CDATA[Channel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="656" y="0" width="106" height="35" uuid="a567ae5b-3e5b-4052-a15c-2ed2b8fcaac0"/>
+				<text><![CDATA[Total Features]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="860" y="0" width="79" height="35" uuid="5c176be6-9eb5-4ad5-ac4f-3abc3ed7af24"/>
+				<text><![CDATA[Passed [ % ]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="939" y="0" width="81" height="35" uuid="b5d44ea3-bf1c-4c5a-976d-ee7a4888184d"/>
+				<text><![CDATA[Failed [ % ]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1020" y="0" width="80" height="35" uuid="9298029c-aad8-4d65-b4e9-1e8d10fc00fb"/>
+				<text><![CDATA[No Run  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1100" y="0" width="80" height="35" uuid="844e4799-b390-4b80-b148-d254e4e4841b"/>
+				<text><![CDATA[Execution %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="538" y="0" width="118" height="35" uuid="3a3fd516-5001-487b-89a9-c5ab879ed2c9"/>
+				<text><![CDATA[Browser]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="762" y="0" width="98" height="35" uuid="28b58c58-2786-40e3-b81f-273c424971e0"/>
+				<text><![CDATA[Total Testcases]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1180" y="0" width="80" height="35" uuid="6fe83064-47e1-4dc1-9e95-46cfc3d55fc8"/>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="327" y="0" width="100" height="35" uuid="a3282b68-a4bf-44c1-b66a-34b654b3ed68"/>
+				<text><![CDATA[Release]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="" hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement style="PassPercentage" x="0" y="0" width="327" height="20" forecolor="#000000" uuid="2cb330bd-76c0-40e2-ac21-3ec460dd7398"/>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testSuite}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA[$F{testSuiteReportLink}]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="427" y="0" width="111" height="20" uuid="06580d12-6dbf-4479-97c2-6d02d81a578c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{channel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="762" y="0" width="98" height="20" uuid="c01d89a9-e563-48d6-b53e-3874938791f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{testcaseCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="656" y="0" width="106" height="20" uuid="d99bf9ce-6419-48e6-98af-bf76fed5a8c5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{featureCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Result" x="860" y="0" width="80" height="20" uuid="39dc1069-0851-44d8-a0e7-76482e5cd8a6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{passedCount}.toString().concat("    [").concat( $F{passPercentage} ).concat("]")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Result1" x="940" y="0" width="80" height="20" uuid="aa274c70-d827-492d-9e99-12337436e416"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{failedCount}.toString().concat("    [").concat( $F{failPercentage} ).concat("]")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1020" y="0" width="80" height="20" uuid="079b44a7-e24b-4425-a81a-19f13c574cf0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noRunCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1100" y="0" width="80" height="20" uuid="26354fbb-16f4-4846-8457-2f32ffaa8022"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{executionPercentage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="538" y="0" width="118" height="20" uuid="d2ac5c9f-ecd2-4bc1-81c8-92e593386bcb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{browser}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1180" y="0" width="80" height="20" uuid="ee05dfe6-070a-418e-a22f-0cacc9991e77"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="327" y="0" width="100" height="20" uuid="09117006-2ecb-4adb-b312-19db27a8e5ca"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{release}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement style="ReportHeader" x="0" y="0" width="279" height="22" forecolor="#000000" uuid="1e187fac-c385-4034-878f-e6988cc00eff"/>
+				<textElement textAlignment="Left">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Execution Completed At :]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="0" y="22" width="279" height="22" uuid="f45a723b-6712-4be6-81f8-6f60c2754fa5"/>
+				<textElement>
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

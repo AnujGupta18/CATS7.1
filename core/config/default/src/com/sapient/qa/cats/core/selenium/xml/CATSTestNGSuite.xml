@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CATS_Run">
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener" />
+  </listeners> 
+  <suite-files>
+        <suite-file path="Verify that user is successfully able to register at keurig ca.xml" />
+    <suite-file path="Verify various tabs on My Account Page after login.xml" />
+    <suite-file path="Verify the pagination on PLP page.xml" />
+    <suite-file path="Validate the headers at homepage including all the links.xml" />
+    <suite-file path="Verify  the details displayed at  review order page.xml" />
+    <suite-file path="Verify Menu Bar.xml" />
+    <suite-file path="Verify that when user clicks on the Add to Cart CTA Product card that get opened can be closed by clicking on the X sign and Product get successfully added.xml" />
+    <suite-file path="Verify that when user is on a Brewer PDP the user see compare icons with compare text for applicable brewers.xml" />
+    <suite-file path="Verify if the user is  able to register the Brewers with the new  serial number.xml" />
+    <suite-file path="Verify that  when user apply the filters  Then user  see that selected facets are visually distinguished via tick mark n the check box .xml" />
+    <suite-file path="Verify the UI of single variant and multiple variant product.xml" />
+    <suite-file path="Verify the UI of OOS product.xml" />
+    <suite-file path="Verify that PDP will  show the quantity increase in the mini cart once the product is successfully added to cart.xml" />
+    <suite-file path="Verify that when user is at cart page user will able to  see a  Onetime purchase and auto delivery radio buttons.xml" />
+    <suite-file path="Verify that user is able to checkout till order review page at Keurig.xml" />
+    <suite-file path="Verify that when user is at PDP user will able to see add to cart CTA.xml" />
+  </suite-files>
+</suite> 

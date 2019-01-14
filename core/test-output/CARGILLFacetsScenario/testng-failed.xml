@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CARGILLFacetsScenario]">
+  <parameter name="configId" value="CONFIG_Chrome"/>
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="channel" value="Desktop"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="CARGILLFacetsScenario"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" name="SCENARIOS_GENERATED_1(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_GENERATED_1">
+        <methods>
+          <include name="beginTestCase"/>
+          <include name="endScenario"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="CARGILLtestdynaprop11" invocation-numbers="0"/>
+          <include name="testBeforeSuite"/>
+          <include name="testAfterSuite"/>
+          <include name="endTestcase"/>
+          <include name="beginScenario"/>
+          <include name="intializeTest"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_GENERATED_1 -->
+    </classes>
+  </test> <!-- SCENARIOS_GENERATED_1(failed) -->
+</suite> <!-- Failed suite [CARGILLFacetsScenario] -->

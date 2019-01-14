@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSReport_summary" pageWidth="1300" pageHeight="1190" columnWidth="1300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="e0ba3952-7fa7-4419-935a-9935de6b96f2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="tableData" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25" lineColor="#999999"/>
+			<topPen lineWidth="0.25" lineColor="#999999"/>
+			<leftPen lineWidth="0.25" lineColor="#999999"/>
+			<bottomPen lineWidth="0.25" lineColor="#999999"/>
+			<rightPen lineWidth="0.25" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="tableHeader" mode="Opaque" backcolor="#DCDCDC" hAlign="Center" vAlign="Middle" isBlankWhenNull="false" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<style name="Header" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Result" style="tableData">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{status}.equals( "PASSED" )]]></conditionExpression>
+			<style mode="Opaque" forecolor="#009933"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{status}.equals( "FAILED" )]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FF0000"/>
+		</conditionalStyle>
+	</style>
+	<field name="clause" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="mappingTestCase" class="java.lang.String"/>
+	<field name="testDataKey" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement style="tableHeader" x="672" y="22" width="199" height="20" uuid="4c8fa7bf-7b11-4baf-87bd-6783f6d86fb9"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="871" y="22" width="235" height="20" uuid="60d9604d-bedb-46fd-aa89-fd75acd3023f"/>
+				<text><![CDATA[Mapping Test Case]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Header" mode="Transparent" x="0" y="0" width="84" height="20" uuid="e2e25baf-d4c4-4fe6-857f-b53a90a496ab"/>
+				<text><![CDATA[StepDefinitions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1106" y="22" width="194" height="20" uuid="57c3bafb-d13c-41a8-bc35-78400463b7bd"/>
+				<text><![CDATA[Test Data Key]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="22" width="204" height="20" uuid="de521fb3-d4c5-46a0-be06-ef17e8c40928"/>
+				<text><![CDATA[Clause]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="204" y="22" width="468" height="20" uuid="995c5996-1eb6-43c1-bf82-8705f92d93a1"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Result" x="672" y="0" width="199" height="20" uuid="46214ac2-6a72-4c72-a262-4958592a06a6"/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="0" y="0" width="204" height="20" uuid="937f009e-ec7e-4ad3-bcec-10274f9ef865"/>
+				<textFieldExpression><![CDATA[$F{clause}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="204" y="0" width="468" height="20" uuid="0bee6242-dae9-4aab-9d9c-ba3e53074965"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="871" y="0" width="235" height="20" uuid="653432a5-04e6-4a01-8e7a-e18eea33179a"/>
+				<textFieldExpression><![CDATA[$F{mappingTestCase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1106" y="0" width="194" height="20" uuid="a49c5123-955e-4edd-8532-b4ea76394999"/>
+				<textFieldExpression><![CDATA[$F{testDataKey}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Dangal]">
+  <parameter name="configId" value="CONFIG_Chrome"/>
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="channel" value="Desktop"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="Dangal"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" name="Dangal(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.bdd.runner.Dangal">
+        <methods>
+          <include name="beginTestCase"/>
+          <include name="endScenario"/>
+          <include name="tearDownClass"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="executeScenario" invocation-numbers="0"/>
+          <include name="testBeforeSuite"/>
+          <include name="beginScenario"/>
+          <include name="testAfterSuite"/>
+          <include name="setUpClass"/>
+          <include name="endTestcase"/>
+          <include name="intializeTest"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.bdd.runner.Dangal -->
+    </classes>
+  </test> <!-- Dangal(failed) -->
+</suite> <!-- Failed suite [Dangal] -->

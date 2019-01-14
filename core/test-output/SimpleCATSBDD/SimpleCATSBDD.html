@@ -1,0 +1,338 @@
+<html>
+<head>
+<title>TestNG:  SimpleCATSBDD</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>SimpleCATSBDD</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/8</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Sep 11 11:30:43 IST 2018</td>
+</tr>
+<tr><td>Total time:</td><td>33 seconds (33689 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD scripts refer CATSSteps.java step definition", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-947767990" onClick='toggleBox("Output-947767990", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-947767990" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-947767990">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (PASSED : 27s)</div><br/>
+<div "result">search a product &quot;sports polyester shoes&quot; and select first product (PASSED : 2s)</div><br/>
+<div "result">verify lining material &quot;polyester&quot; (PASSED : 0s)</div><br/>
+<div "result">quit the browser (PASSED : 1s)</div><br/>
+</div>
+</td>
+<td></td>
+<td>31</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD with examples", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-892764164" onClick='toggleBox("Output-892764164", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-892764164" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-892764164">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">search a product &quot;sports polyester shoes&quot; and select first product (SKIPPED)</div><br/>
+<div "result">verify lining material or insole material contains &quot;polyester&quot; (SKIPPED)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.pageLoadWait(CucumberActionMap.java:1283)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:36)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace892764164", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace892764164'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.pageLoadWait(CucumberActionMap.java:1283)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:36)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD with examples", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-666918839" onClick='toggleBox("Output-666918839", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-666918839" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-666918839">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">search a product &quot;women cotton shoes&quot; and select first product (SKIPPED)</div><br/>
+<div "result">verify lining material or insole material contains &quot;Cotton&quot; (SKIPPED)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace666918839", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace666918839'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD with examples", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-519457680" onClick='toggleBox("Output-519457680", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-519457680" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-519457680">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">search a product &quot;$Target.Product.F1&quot; and select first product (SKIPPED)</div><br/>
+<div "result">verify lining material or insole material contains &quot;$Target.Material.F1&quot; (SKIPPED)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace519457680", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace519457680'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD with examples", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-1319429105" onClick='toggleBox("Output-1319429105", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1319429105" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1319429105">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">search a product &quot;$Target.Product.F2&quot; and select first product (SKIPPED)</div><br/>
+<div "result">verify lining material or insole material contains &quot;$Target.Material.F2&quot; (SKIPPED)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1319429105", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1319429105'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD with examples", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-723671266" onClick='toggleBox("Output-723671266", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-723671266" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-723671266">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">search a product &quot;$Target.Product.F3&quot; and select first product (SKIPPED)</div><br/>
+<div "result">verify lining material or insole material contains &quot;$Target.Material.F3&quot; (SKIPPED)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace723671266", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace723671266'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Run CATS BDD with examples", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-277372191" onClick='toggleBox("Output-277372191", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-277372191" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-277372191">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">search a product &quot;$Target.Product.F4&quot; and select first product (SKIPPED)</div><br/>
+<div "result">verify lining material or insole material contains &quot;$Target.Material.F4&quot; (SKIPPED)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace277372191", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace277372191'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Launch and Quit Browser", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-1186562735" onClick='toggleBox("Output-1186562735", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1186562735" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1186562735">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:31)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1186562735", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1186562735'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:31)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+<tr>
+<td title='com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD.executeScenario()'><b>executeScenario</b><br>Test class: com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD<br>Parameters: "Launch and Quit Browser one more time", "Run simple feature using CATS BDD"<br/>
+<a href="#Output-188382660" onClick='toggleBox("Output-188382660", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-188382660" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-188382660">
+<div "result">user wants to launch &quot;http:&#x2F;&#x2F;target.com&quot; (SKIPPED : 0s)</div><br/>
+<div "result">quit the browser (SKIPPED)</div><br/>
+</div>
+</td>
+<td><div><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace188382660", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace188382660'><pre>org.testng.SkipException: SKIPPED due to EXIT SUITE
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.skipIfExitSuiteMarked(DynamicInstTestcaseClassExtend.java:725)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:535)
+	at com.sapient.qa.cats.core.vo2.DynamicInstTestcaseClassExtend.executeTestStep(DynamicInstTestcaseClassExtend.java:526)
+	at com.sapient.qa.cats.core.framework.CucumberActionMap.launchSite(CucumberActionMap.java:840)
+	at com.sapient.qa.cats.core.selenium.bdd.stepdef.CATSSteps.user_wants_to_launch(CATSSteps.java:35)
+	at ?.user wants to launch &quot;http://target.com&quot;(D:/CATS/6.3.0-as-is/Development/CATS/DataFiles/Features/SimpleScript.feature:36)
+</pre></div></td>
+<td>0</td>
+<td>com.sapient.qa.cats.core.selenium.bdd.runner.SimpleCATSBDD@731f8236</td></tr>
+</table><p>
+</body>
+</html>

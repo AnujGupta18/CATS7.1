@@ -1,0 +1,53 @@
+{
+"CONFIG_1": {
+			"id": "CONFIG_1",
+			"services": [{
+				"type": "nokia",
+				"number": ["the", "xyz"],
+				"number2": ["qqq", "sss","ddd"]
+			}, {
+				"type": "SamsungGalaxyS5",
+				"number": [222, 2343, 6, 7, 8]
+			},{
+				"type": "Nexus",
+				"number": ["XXX", "YYYY", "ZZZZ"]
+			},
+			{
+				"type": "Nokia",
+				"number": ["aaa", "gggg", "rrrr"]
+			}
+			],
+			"device": {
+				"id": "1",
+				"appPath": "",
+				"port": "4723",
+				"platform": "Android",
+				"protocol": "http",
+				"version": "4.4.4",
+				"bundleid": "nokia",
+				"description": "config details for andriod",
+				"name": "SamsungGalaxyS5",
+				"browser": "Chrome",
+				"context": "/wd/hub",
+				"driver": "AndroidDevice",
+				"server": "127.0.0.1",
+				"packagename": "",
+				"activity": "",
+				"remoteWebDriverURL": "",
+				"capabilities": "",
+				"analytics": null,
+				"udid": ""
+			},
+			"viewPort": "",
+			"sql": {
+				"port": "123",
+				"username": null,
+				"host": null,
+				"queries": null,
+				"driver": null,
+				"ipaddress": null,
+				"password": null
+			}
+		}
+		}
+		

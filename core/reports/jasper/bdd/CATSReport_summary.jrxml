@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSReport_summary" pageWidth="1300" pageHeight="1190" columnWidth="1300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="e0ba3952-7fa7-4419-935a-9935de6b96f2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="tableData" mode="Opaque" backcolor="#FFFFFF" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<style name="tableHeader" mode="Opaque" backcolor="#DCDCDC" hAlign="Center" vAlign="Middle" isBlankWhenNull="false" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<style name="Header" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<field name="executionId" class="java.lang.String"/>
+	<field name="scenarioId" class="java.lang.String"/>
+	<field name="numberOfTestCases" class="java.lang.String"/>
+	<field name="numberOfPassedTests" class="java.lang.String"/>
+	<field name="numberOfFailedTests" class="java.lang.String"/>
+	<field name="executionPercentage" class="java.lang.String"/>
+	<field name="passPercentage" class="java.lang.String"/>
+	<field name="failPercentage" class="java.lang.String"/>
+	<field name="norun" class="java.lang.String"/>
+	<field name="duration" class="java.lang.String"/>
+	<field name="scenarioName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Header" x="57" y="0" width="412" height="20" uuid="3c44764b-a954-4ee1-b3e5-62989e445993"/>
+				<textFieldExpression><![CDATA[$F{executionId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="tableHeader" x="672" y="22" width="128" height="20" uuid="4c8fa7bf-7b11-4baf-87bd-6783f6d86fb9"/>
+				<text><![CDATA[Total Testcases]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="800" y="22" width="60" height="20" uuid="68c93a4e-1ef6-49a3-8fa8-6537ec6d9f21"/>
+				<text><![CDATA[Passed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="860" y="22" width="60" height="20" uuid="60d9604d-bedb-46fd-aa89-fd75acd3023f"/>
+				<text><![CDATA[Failed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="980" y="22" width="82" height="20" uuid="5734c07c-1f1a-4690-8804-25e295cda068"/>
+				<text><![CDATA[Execution %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1062" y="22" width="82" height="20" uuid="df270795-49e0-43a1-b34d-0a02a2dd345e"/>
+				<text><![CDATA[Pass %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1144" y="22" width="82" height="20" uuid="697f1cb6-4cf0-4e9f-87ba-b1d0e973dfbf"/>
+				<text><![CDATA[Fail %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Header" mode="Transparent" x="0" y="0" width="57" height="20" uuid="e2e25baf-d4c4-4fe6-857f-b53a90a496ab"/>
+				<text><![CDATA[Suite      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="920" y="22" width="60" height="20" uuid="57c3bafb-d13c-41a8-bc35-78400463b7bd"/>
+				<text><![CDATA[Skipped]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="0" y="22" width="204" height="20" uuid="de521fb3-d4c5-46a0-be06-ef17e8c40928"/>
+				<text><![CDATA[Scenario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="1226" y="22" width="74" height="20" uuid="1c04f41c-c6d3-4f0b-93fd-c315a42dc92b"/>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="tableHeader" x="204" y="22" width="468" height="20" uuid="995c5996-1eb6-43c1-bf82-8705f92d93a1"/>
+				<text><![CDATA[Scenario Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="tableData" x="672" y="0" width="128" height="20" uuid="46214ac2-6a72-4c72-a262-4958592a06a6"/>
+				<textFieldExpression><![CDATA[$F{numberOfTestCases}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="LocalAnchor">
+				<reportElement style="tableData" x="0" y="0" width="204" height="20" uuid="937f009e-ec7e-4ad3-bcec-10274f9ef865"/>
+				<textFieldExpression><![CDATA[$F{scenarioId}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA[$F{scenarioId}]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="204" y="0" width="468" height="20" uuid="0bee6242-dae9-4aab-9d9c-ba3e53074965"/>
+				<textFieldExpression><![CDATA[$F{scenarioName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="800" y="0" width="60" height="20" uuid="265ed6b2-25d7-4316-917f-ce1e3953741f"/>
+				<textFieldExpression><![CDATA[$F{numberOfPassedTests}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="860" y="0" width="60" height="20" uuid="653432a5-04e6-4a01-8e7a-e18eea33179a"/>
+				<textFieldExpression><![CDATA[$F{numberOfFailedTests}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="920" y="0" width="60" height="20" uuid="a49c5123-955e-4edd-8532-b4ea76394999"/>
+				<textFieldExpression><![CDATA[$F{norun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="980" y="0" width="82" height="20" uuid="89134110-8464-4429-9ccd-dacc9b1b6792"/>
+				<textFieldExpression><![CDATA[$F{executionPercentage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1062" y="0" width="82" height="20" uuid="bd9ac05e-c5cf-429a-b35b-0a9921044000"/>
+				<textFieldExpression><![CDATA[$F{passPercentage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1144" y="0" width="82" height="20" uuid="4d110554-5ea9-4820-957e-57501158809e"/>
+				<textFieldExpression><![CDATA[$F{failPercentage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="tableData" x="1226" y="0" width="74" height="20" uuid="d9c565ac-0205-4e36-afd2-88cb4e58c89c"/>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

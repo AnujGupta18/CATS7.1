@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CATSReport_Testcases_actions" pageWidth="1300" pageHeight="1684" whenNoDataType="AllSectionsNoDetail" columnWidth="1300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="413cd04e-d54e-44fe-a651-26079a81702e">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="tableHeader" mode="Opaque" forecolor="#000000" backcolor="#EFEFEF" hAlign="Left" vAlign="Middle" isBlankWhenNull="true" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box leftPadding="5" rightPadding="5">
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<style name="tableData" mode="Opaque" backcolor="#FFFFFF" isBlankWhenNull="true" fontName="Calibri" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<pen lineColor="#999999"/>
+		<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+			<pen lineWidth="0.25" lineColor="#999999"/>
+			<topPen lineWidth="0.25" lineColor="#999999"/>
+			<leftPen lineWidth="0.25" lineColor="#999999"/>
+			<bottomPen lineWidth="0.25" lineColor="#999999"/>
+			<rightPen lineWidth="0.25" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="tableDataHCenter" style="tableData" hAlign="Center" vAlign="Top"/>
+	<style name="Result" style="tableData" forecolor="#FFFFFF">
+		<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.equals( "PASSED" )]]></conditionExpression>
+			<style forecolor="#009933"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.equals( "FAILED" )]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.equals( "NOT STARTED" )]]></conditionExpression>
+			<style forecolor="#999999" fill="Solid"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.contains( "CONDITION" )]]></conditionExpression>
+			<style forecolor="#FFCC00"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{result}.equals( "SKIPPED" )]]></conditionExpression>
+			<style forecolor="#666666" fill="Solid"/>
+		</conditionalStyle>
+	</style>
+    	<style name="actualResult" style="tableData" forecolor="#FFFFFF">
+		<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{actualResult}.contains( "SCENARIO" )]]></conditionExpression>
+			<style forecolor="#FF0000"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[!$F{actualResult}.contains( "SCENARIO" )]]></conditionExpression>
+			<style forecolor="#000000"/>
+		</conditionalStyle>
+    </style>
+	<style name="Link" style="tableData" forecolor="#0066FF"/>
+	<style name="ConditionalColumn" style="tableData">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[!$F{result}.equals( "PASSED" ) && !$F{result}.equals( "FAILED" )]]></conditionExpression>
+			<style forecolor="#FFFFFF" fill="Solid"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[($F{result}.equals( "PASSED" ) || $F{result}.equals( "FAILED" ))]]></conditionExpression>
+			<style forecolor="#000000" backcolor="#FFFFFF" fontSize="11" isBold="false"/>
+		</conditionalStyle>
+	</style>
+	<style name="VerticalHeader" style="tableHeader" rotation="Left"/>
+	<style name="EvenOddRowStyle" style="tableData" mode="Opaque">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() %2 == 0)]]></conditionExpression>
+			<style backcolor="#FFFFFF"/>
+		</conditionalStyle>
+	</style>
+	<field name="actionDescription" class="java.lang.String"/>
+	<field name="action" class="java.lang.String"/>
+	<field name="testData" class="java.lang.String"/>
+	<field name="expectedResult" class="java.lang.String"/>
+	<field name="actualResult" class="java.lang.String"/>
+	<field name="result" class="java.lang.String"/>
+	<field name="functionalFailures" class="java.lang.String"/>
+	<field name="scriptFailures" class="java.lang.String"/>
+	<field name="duration" class="java.lang.String"/>
+	<field name="screenShot" class="java.lang.String"/>
+	<field name="controlFlow" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="68" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement style="VerticalHeader" x="1097" y="0" width="45" height="68" uuid="5baf0802-9543-4114-9c70-9ba7783d822a"/>
+					<text><![CDATA[Script
+Failure]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="VerticalHeader" x="1052" y="0" width="45" height="68" uuid="79c20fdb-56ed-4b78-b164-8f00d7a9ba66"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Functional
+Failure]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="540" y="0" width="220" height="68" uuid="88c65fb5-b4eb-4215-8172-ffc7ff68f2ec"/>
+					<text><![CDATA[Expected Result]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="320" y="0" width="220" height="68" uuid="d63633b7-e01c-45c6-a252-7d3530d340c9"/>
+					<text><![CDATA[Test Data]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="980" y="0" width="72" height="68" uuid="b6a2556f-9f33-46d0-b7b0-7ac43b18f0f7"/>
+					<text><![CDATA[Result]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="760" y="0" width="220" height="68" uuid="0e14401b-3af7-4fe4-b281-3111355758e8"/>
+					<text><![CDATA[Actual Result]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="75" y="0" width="121" height="68" uuid="29b76550-ea67-4f53-b729-4838627d2bcd"/>
+					<text><![CDATA[Action Description]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="196" y="0" width="124" height="68" uuid="508dcc83-f3cb-438d-a7a3-add080bdfcde"/>
+					<text><![CDATA[Action]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="1142" y="0" width="75" height="68" uuid="52efc5df-5b02-4f21-b98e-f46581b658ef"/>
+					<text><![CDATA[Duration]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="tableHeader" x="0" y="0" width="75" height="68" uuid="b2c01fca-e218-48ce-a7b1-233d51558c32"/>
+					<text><![CDATA[Condition]]></text>
+				</staticText>
+			</elementGroup>
+			<staticText>
+				<reportElement style="tableHeader" x="1217" y="0" width="83" height="68" uuid="76f3c28d-b5cb-491c-be9d-747d62ac6178"/>
+				<text><![CDATA[Screenshot]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" stretchType="RelativeToTallestObject" x="75" y="0" width="121" height="20" uuid="51f19039-a88e-4377-8c3d-ae7ce5c1eb40"/>
+				<textFieldExpression><![CDATA[$F{actionDescription}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" stretchType="RelativeToTallestObject" x="196" y="0" width="124" height="20" uuid="502f4138-3d28-45d4-9afd-3592251c9841"/>
+				<textFieldExpression><![CDATA[$F{action}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" stretchType="RelativeToTallestObject" x="320" y="0" width="220" height="20" isPrintWhenDetailOverflows="true" uuid="b9df6f04-e36e-4994-a315-cd83f661b2db"/>
+				<textFieldExpression><![CDATA[$F{testData}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" stretchType="RelativeToTallestObject" x="540" y="0" width="220" height="20" uuid="744cba3b-354c-40e8-a2cc-b0d962e17a6c"/>
+				<textFieldExpression><![CDATA[$F{expectedResult}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="actualResult" stretchType="RelativeToTallestObject" x="760" y="0" width="220" height="20" uuid="3e5e6b97-3a04-4a70-97e5-42655b332f3c"/>
+				<textFieldExpression><![CDATA[$F{actualResult}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Result" stretchType="RelativeToTallestObject" x="980" y="0" width="72" height="20" uuid="37e168f1-f112-4e5a-acab-47c108915b35"/>
+				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="ConditionalColumn" stretchType="RelativeToTallestObject" x="1052" y="0" width="45" height="20" uuid="8de886fc-09ac-47ab-99e6-a4436cc96948"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{functionalFailures}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="ConditionalColumn" stretchType="RelativeToTallestObject" x="1097" y="0" width="45" height="20" uuid="8f40d0fb-40af-47a4-9f89-238b3256cb0a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{scriptFailures}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="ConditionalColumn" stretchType="RelativeToTallestObject" x="1142" y="0" width="75" height="20" uuid="d29b644d-8b8f-41cf-b044-36b0593179a5"/>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement style="Link" stretchType="RelativeToTallestObject" x="1217" y="0" width="83" height="20" uuid="7171fc16-101a-40e8-b7ec-88bd71731beb"/>
+				<textFieldExpression><![CDATA[$F{screenShot} == null ? "" : "Screenshot"]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA[$F{screenShot}]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="tableData" stretchType="RelativeToTallestObject" x="0" y="0" width="75" height="20" uuid="7afa7e59-7dfd-443a-856f-932df827ab62"/>
+				<textFieldExpression><![CDATA[$F{controlFlow}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

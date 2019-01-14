@@ -1,0 +1,84 @@
+/**
+Table Caption edit the font family,weight,color
+
+**/
+caption {
+	margin-top: 25px;
+	font-family: initial; /** **/
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bolder; /** **/
+	color: black; /** **/
+}
+
+/**
+Table Scenario header edit the font siZe, family,weight,color
+Also background color of Table Headers
+**/
+table tr th {
+	font-family: initial;
+	font-size: 15px;
+	font-weight: bolder;
+	background-color: #6b7ae0;
+	color: white;
+}
+/**
+Table TestCase header edit the background-color of test cases of Non BDD Report
+
+**/
+#testCases th {
+	cursor:pointer;
+	background-color: #cef1d0;
+}
+#testCasestrue th {
+	cursor:pointer;
+	background-color: #f7a099;
+}
+#testCasesskip th {
+	cursor:pointer;
+	background-color: #c5bab9;
+}
+
+
+/**
+  Table TestCase header edit the background-color of test cases for BDD Report
+         **/
+         #testCasesPASS th {
+         cursor:pointer;
+         background-color: #cef1d0;
+         }
+         #testCasesFAIL th {
+         cursor:pointer;
+         background-color: #f7a099;
+         }
+         #testCasesSKIPPED th {
+         background-color: #c5bab9;
+         }
+         #testCasesUNDEFINED th {
+         background-color: #f5eaea;
+         }
+
+
+/**
+Table TestCase header edit the font family,size,weight,color
+
+**/
+tr th span {
+	font-family: initial;
+	color: black;
+}
+
+/**
+Table Data edit the font family,size,weight,color
+
+**/
+td p {
+	
+}
+
+/**
+Edit the background color of table eventh rows
+**/
+tr:nth-child(even) {
+	background-color: #f8f7ff;
+}

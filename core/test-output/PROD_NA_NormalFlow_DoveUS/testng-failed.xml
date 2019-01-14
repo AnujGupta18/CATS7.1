@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PROD_NA_NormalFlow_DoveUS]">
+  <parameter name="configId" value="CONFIG_Chrome"/>
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="channel" value="Desktop"/>
+  <parameter name="configpath" value="config/default"/>
+  <parameter name="iterations" value="1"/>
+  <parameter name="suiteName" value="PROD_NA_NormalFlow_DoveUS"/>
+  <listeners>
+    <listener class-name="com.sapient.qa.cats.core.framework.ExecutionListener"/>
+  </listeners>
+  <test thread-count="5" name="SCENARIOS_Axeus(failed)">
+    <classes>
+      <class name="com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_Axeus">
+        <methods>
+          <include name="beginTestCase"/>
+          <include name="takeScreenShotOnFailure"/>
+          <include name="AXEUSHomepage1"/>
+          <include name="endScenario"/>
+          <include name="testBeforeSuite"/>
+          <include name="beginScenario"/>
+          <include name="testAfterSuite"/>
+          <include name="endTestcase"/>
+          <include name="intializeTest"/>
+        </methods>
+      </class> <!-- com.sapient.qa.cats.core.selenium.testng.test.scenario.SCENARIOS_Axeus -->
+    </classes>
+  </test> <!-- SCENARIOS_Axeus(failed) -->
+</suite> <!-- Failed suite [PROD_NA_NormalFlow_DoveUS] -->

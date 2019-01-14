@@ -1,0 +1,167 @@
+/**
+Modify for Box View
+**/
+
+/**
+Result indicators, edit the font size, weight, color.
+affetcs Footer and sub headings
+Not: Edit for all cases--Fail,Pass,amber
+**/
+thead th[class$="fail"] {
+	font-weight: bold;
+	color: white;
+	background-color: #ff5050;
+}
+
+thead th[class$="amber"] {
+	font-weight: bold;
+	color: white;
+	background-color: #FFAA00;
+}
+
+thead th[class$="pass"] {
+	font-weight: bold;
+	color: white;
+	background-color: #50BB50;
+}
+
+/**
+Caption for summary report, edit the font size, weight, color.
+
+Not: Edit for all cases--Fail,Pass,amber
+**/
+h5[class$="fail"] {
+	text-align: center;
+	font-weight: bold;
+	color: #ff5050;
+	text-transform: uppercase;
+}
+
+h5[class$="pass"] {
+	text-align: center;
+	font-weight: bold;
+	color: #50BB50;
+	text-transform: uppercase;
+}
+
+h5[class$="amber"] {
+	text-align: center;
+	font-weight: bold;
+	color: #FFAA00;
+	text-transform: uppercase;
+}
+
+
+/**
+Modify for List view
+
+**/
+/**
+Result indicators, edit the font size, weight, color.
+affetcs Suite names, footer and captions
+Not: Edit for all cases--Fail,Pass,amber
+**/
+td[class$="pass"] {
+	color: #50BB50;
+}
+
+td[class$="amber"] {
+	color: #FFAA00;
+}
+
+td[class$="fail"] {
+	color: #ff5050;
+}
+
+tr[class$="pass"] {
+	color: #50BB50;
+}
+
+tr[class$="amber"] {
+	color: #ccc;
+}
+
+tr[class$="fail"] {
+	color: #ff5050;
+}
+
+.color_pass {
+	background-color: #50BB50;
+}
+
+.color_amber {
+	background-color: #FFAA00;
+}
+
+.color_fail {
+	background-color: #ff5050;
+}
+
+caption[class$="fail"] {
+	text-align: center;
+	font-weight: bold;
+	color: #ff5050;
+}
+
+caption[class$="pass"] {
+	text-align: center;
+	font-weight: bold;
+	color: #50BB50;
+}
+
+caption[class$="amber"] {
+	text-align: center;
+	font-weight: bold;
+	color: #FFAA00;
+}
+
+/**
+Edit the background color of table eventh rows
+**/
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+/**
+Modify for Both view
+**/
+
+.footer-bottom.result_fail {
+	font-weight: bold;
+	background-color: #ff5050;
+	color: white;
+}
+
+.footer-bottom.result_amber {
+	font-weight: bold;
+	background-color: #FFAA00;
+	color: white;
+}
+
+.footer-bottom.result_pass {
+	font-weight: bold;
+	background-color: #50BB50;
+	color: white;
+}
+td.result_fail {
+	
+	color: #ff5050;
+}
+
+td.result_amber {
+	
+	color: #FFAA00;
+}
+
+td.result_pass {
+	
+	color: #50BB50;
+}
+
+/**
+Title of the project, edit the font size, weight, color, alignment
+
+**/
+.projTitle {
+	text-align: center;
+}
